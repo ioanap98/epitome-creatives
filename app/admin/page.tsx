@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 // Import the UploadForm component that will be shown on the admin page
 import UploadForm from './UploadForm';
 
+
 // This is the default export: your Admin Page component
 export default async function AdminPage() {
   // Get access to cookies using the cookies() function (server-side only)
