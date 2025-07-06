@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import type { Variants } from "framer-motion";
 
 const featuredProjects = [
   {
@@ -219,7 +218,7 @@ export default function FeaturedWork() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            From wellness products to luxury cosmetics, we create imagery that tells your brand's story
+            From wellness products to luxury cosmetics, we create imagery that tells your brand&apos;s story
           </motion.p>
         </motion.div>
       </div>

@@ -82,11 +82,11 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-light mb-4">
-            Let's Create Your Epitome
+            Let&apos;s Create Your Epitome
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Ready to elevate your brand to its epitome? Tell us about your
-            vision and we'll create a custom creative solution that exceeds
+            vision and we&apos;ll create a custom creative solution that exceeds
             your expectations.
           </p>
         </motion.div>

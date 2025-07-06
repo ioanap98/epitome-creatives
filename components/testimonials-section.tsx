@@ -45,7 +45,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.42, 0, 1, 1] as [number, number, number, number], // cubic-bezier for easeOut
     },
   },
 }
@@ -57,7 +57,7 @@ const iconVariants = {
     backgroundColor: "#374151",
     transition: {
       duration: 0.6,
-      ease: "easeInOut",
+      ease: [0.42, 0, 1, 1] as [number, number, number, number], // cubic-bezier for easeOut
     },
   },
 }
@@ -81,8 +81,7 @@ export default function WhyChooseUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We're passionate about helping brands reach their epitome through powerful visual storytelling. Here's what
-            sets us apart in the world of creative product photography.
+            We&apos;re passionate about helping brands reach their epitome through powerful visual storytelling. Here&apos;s what sets us apart in the world of creative product photography.
           </motion.p>
           <motion.div
             className="w-24 h-px bg-black mx-auto mt-6"

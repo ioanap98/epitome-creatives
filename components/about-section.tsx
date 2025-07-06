@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -51,69 +51,69 @@ const statsVariants = {
   },
 }
 
-function CountUpAnimation({ targetNumber, label, delay = 0 }: { targetNumber: string; label: string; delay?: number }) {
-  const [count, setCount] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+// function CountUpAnimation({ targetNumber, label, delay = 0 }: { targetNumber: string; label: string; delay?: number }) {
+//   const [count, setCount] = useState(0)
+//   const [isVisible, setIsVisible] = useState(false)
 
-  // Extract numeric value from string (e.g., "100+" -> 100)
-  const numericTarget = Number.parseInt(targetNumber.replace(/\D/g, "")) || 0
-  const suffix = targetNumber.replace(/\d/g, "") // Extract non-numeric characters like "+"
+//   // Extract numeric value from string (e.g., "100+" -> 100)
+//   const numericTarget = Number.parseInt(targetNumber.replace(/\D/g, "")) || 0
+//   const suffix = targetNumber.replace(/\d/g, "") // Extract non-numeric characters like "+"
 
-  useEffect(() => {
-    if (!isVisible) return
+//   useEffect(() => {
+//     if (!isVisible) return
 
-    const duration = 2000 // 2 seconds
-    const steps = 60 // 60 steps for smooth animation
-    const increment = numericTarget / steps
-    const intervalTime = duration / steps
+//     const duration = 2000 // 2 seconds
+//     const steps = 60 // 60 steps for smooth animation
+//     const increment = numericTarget / steps
+//     const intervalTime = duration / steps
 
-    let currentCount = 0
-    const timer = setInterval(() => {
-      currentCount += increment
-      if (currentCount >= numericTarget) {
-        setCount(numericTarget)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(currentCount))
-      }
-    }, intervalTime)
+//     let currentCount = 0
+//     const timer = setInterval(() => {
+//       currentCount += increment
+//       if (currentCount >= numericTarget) {
+//         setCount(numericTarget)
+//         clearInterval(timer)
+//       } else {
+//         setCount(Math.floor(currentCount))
+//       }
+//     }, intervalTime)
 
-    return () => clearInterval(timer)
-  }, [isVisible, numericTarget])
+//     return () => clearInterval(timer)
+//   }, [isVisible, numericTarget])
 
-  return (
-    <motion.div
-      className="group"
-      variants={statsVariants}
-      initial="hidden"
-      whileInView="visible"
-      onViewportEnter={() => setIsVisible(true)}
-      viewport={{ once: true }}
-      transition={{ delay }}
-    >
-      <motion.div
-        className="text-3xl font-light mb-2 relative overflow-hidden"
-        whileHover={{
-          scale: 1.2,
-          color: "#059669",
-          transition: { duration: 0.3 },
-        }}
-      >
-        <span>
-          {count}
-          {suffix}
-        </span>
-        <motion.div
-          className="absolute bottom-0 left-0 h-0.5 bg-green-600"
-          initial={{ width: "0%" }}
-          animate={{ width: isVisible ? "100%" : "0%" }}
-          transition={{ duration: 2, delay: delay + 0.2 }}
-        />
-      </motion.div>
-      <div className="text-gray-600">{label}</div>
-    </motion.div>
-  )
-}
+//   return (
+//     <motion.div
+//       className="group"
+//       variants={statsVariants}
+//       initial="hidden"
+//       whileInView="visible"
+//       onViewportEnter={() => setIsVisible(true)}
+//       viewport={{ once: true }}
+//       transition={{ delay }}
+//     >
+//       <motion.div
+//         className="text-3xl font-light mb-2 relative overflow-hidden"
+//         whileHover={{
+//           scale: 1.2,
+//           color: "#059669",
+//           transition: { duration: 0.3 },
+//         }}
+//       >
+//         <span>
+//           {count}
+//           {suffix}
+//         </span>
+//         <motion.div
+//           className="absolute bottom-0 left-0 h-0.5 bg-green-600"
+//           initial={{ width: "0%" }}
+//           animate={{ width: isVisible ? "100%" : "0%" }}
+//           transition={{ duration: 2, delay: delay + 0.2 }}
+//         />
+//       </motion.div>
+//       <div className="text-gray-600">{label}</div>
+//     </motion.div>
+//   )
+// }
 
 export default function AboutSection() {
   return (
