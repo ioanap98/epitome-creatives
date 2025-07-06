@@ -1,82 +1,72 @@
 "use client"
 
-import Link from "next/link";
-import { use, useState } from "react";
-import { FaInstagram, FaTiktok } from "react-icons/fa";
-import { HiMenu, HiX } from 'react-icons/hi';
+import { useState } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-
-export const Navbar = () => {
-
-  const[menuOpen, setMenuOpen] = useState(false);
-
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-  <nav className="flex items-center justify-between w-full mx-auto bg-blue-100 text-black text-xl py-4 px-6  md:px-12 lg:px-24 ">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-black">
+            EPITOME CREATIVES
+          </Link>
 
-        <div className="flex items-center">
-          <Link href="/">Sabeel Al-Nur</Link>
-        </div>  
-
-        <div
-          // className={`
-          //   absolute left-0 w-full px-5 flex items-center justify-center
-          //   transition-all duration-300 ease-in-out
-          //   md:static md:w-auto md:min-h-fit
-          //   ${menuOpen
-          //     ? 'top-0 opacity-100 pointer-events-auto bg-gradient-to-t from-blue-100 to-white min-h-full mx-auto' 
-          //     : 'top-0 opacity-0 pointer-events-none scale-95'} 
-          //   md:bg-transparent md:opacity-100 md:pointer-events-auto
-          // `}
-
-          className={`absolute left-0 w-full px-5 flex flex-col items-center justify-center
-              transition-all duration-300 ease-in-out
-              md:static md:w-auto md:min-h-fit
-              ${menuOpen 
-                ? 'top-0 bg-gradient-to-t from-blue-100 to-white min-h-full mx-auto' 
-                : 'top-[-100vh]'} 
-              md:bg-transparent`}               
-        >
-
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="absolute top-4 right-4 text-3xl md:hidden"
-              aria-label="Close menu"
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="#services" className="text-gray-600 hover:text-black transition-colors">
+              Services
+            </Link>
+            <Link href="#portfolio" className="text-gray-600 hover:text-black transition-colors">
+              Portfolio
+            </Link>
+            <Link href="#about" className="text-gray-600 hover:text-black transition-colors">
+              About
+            </Link>
+            <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
+              Contact
+            </Link>
+            <Button
+              variant="outline"
+              className="border-black text-black hover:bg-black hover:text-white bg-transparent"
             >
-              <HiX />
-            </button>
+              Request Quote
+            </Button>
+          </nav>
 
-          <ul className="flex flex-col gap-8 md:flex-row md:items-center md:gap-6">
-            <li><Link className="hover:text-gray-500" href="/">Work</Link></li>
-            <li><Link className="hover:text-gray-500" href="/">About</Link></li>
-            <li><Link className="hover:text-gray-500" href="/">Contact</Link></li>
-          </ul>
-
-          <div className="absolute flex bottom-[8%] items-center gap-4 md:static">
-            <a href="" target="_blank" rel="noopener noreferrer"
-            className=" bottom-1 md:hidden"><FaInstagram/></a>
-            <a href="" target="_blank" rel="noopener noreferrer"
-            className="md:hidden"><FaTiktok/></a>
-          </div>
-
+          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        <div className="flex items-center gap-4">
-          <a href="" target="_blank" rel="noopener noreferrer"
-            className="hidden md:inline-block"><FaInstagram/></a>
-            <a href="" target="_blank" rel="noopener noreferrer"
-            className="hidden md:inline-block"><FaTiktok/></a>
-          
-          <button 
-            className="text-3xl cursor-pointer md:hidden"
-            onClick={() => setMenuOpen((prev) => !prev)} 
-            aria-label="Toggle Menu"
-          >{ menuOpen? <HiX/> : <HiMenu /> } </button>
-        </div>
-
-        
-  </nav>
-
-  
-  );
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+            <div className="flex flex-col space-y-4">
+              <Link href="#portfolio" className="text-gray-600 hover:text-black transition-colors">
+                Portfolio
+              </Link>
+              <Link href="#services" className="text-gray-600 hover:text-black transition-colors">
+                Services
+              </Link>
+              <Link href="#about" className="text-gray-600 hover:text-black transition-colors">
+                About
+              </Link>
+              <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
+                Contact
+              </Link>
+              <Button
+                variant="outline"
+                className="border-black text-black hover:bg-black hover:text-white w-fit bg-transparent"
+              >
+                Request Quote
+              </Button>
+            </div>
+          </nav>
+        )}
+      </div>
+    </header>
+  )
 }

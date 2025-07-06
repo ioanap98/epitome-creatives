@@ -1,59 +1,58 @@
+// app/page.tsx
 'use client';
 
-import TickerTape from '@/components/tickertape_animation';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import HeroSection from '@/components/ui/hero';
+// import TickerTape from '@/components/tickertape_animation';
+import PortfolioGrid from '@/components/portfolio-section';
+import ServicesSection from '@/components/services-section';
+import AboutSection from '@/components/about-section';
+import WhyChooseUsSection from '@/components/testimonials-section';
+import ContactSection from '@/components/contact-section';
+import Footer from '@/components/footer';
+import FeaturedWork from '@/components/featured-work';
+import Header from '@/components/navbar';
 
-export default function Carousel() {
+export default function HomePage() {
   const [images, setImages] = useState<string[]>([]);
-  const [current, setCurrent] = useState(0);
+  const [loading, setLoading] = useState(true);
 
+  // 1️⃣ Fetch the list of filenames from your API
   useEffect(() => {
-    const fetchImages = async () => {
-      const res = await fetch('/api/images');
-      const data = await res.json();
-      setImages(data);
-    };
-    fetchImages();
+    fetch('/api/images')
+      .then((res) => res.json())
+      .then((data: string[]) => {
+        // 2️⃣ Build public URLs for each file
+        setImages(data.map((f) => `/uploads/${f}`));
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {
-    if (images.length === 0) return;
+  if (loading) {
+    return <p className="p-6 text-center">Loading…</p>;
+  }
 
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [images]);
-
-  if (images.length === 0) return <p>Loading...</p>;
-
+  if (images.length === 0) {
+    return <p className="p-6 text-center">No images found.</p>;
+  }
 
   return (
     <>
-      <div className="w-screen h-screen overflow-hidden relative">
-        {images.map((img, index) => (
-          <img
-            key={img}
-            src={`/uploads/${img}`}
-            alt={img}
-            className={`absolute top-0 left-0 w-screen h-screen object-cover transition-opacity duration-500 ease-in-out ${
-        index === current ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-        <div className='absolute bottom-[30%] flex items-center justify-center mx-auto w-full '>
-          <h1 className='text-6xl  font-bold text-center text-white   p-4 rounded-lg'>
-            The creative growth partner
-          </h1>
-        </div>
-      </div>
-
-      <TickerTape />
-
+      <Header />
+      <HeroSection images={images} />
+      {/* <TickerTape /> */}
+      <ServicesSection />
+      <PortfolioGrid />
+      <FeaturedWork />
+      <AboutSection />
+      <WhyChooseUsSection />
+      <ContactSection />
+      <Footer />
       
+
+
+
     </>
   );
 }
-
-

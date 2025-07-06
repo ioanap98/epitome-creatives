@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 // Import the UploadForm component that will be shown on the admin page
 import UploadForm from './UploadForm';
-
+import UploadFormPortfolio from './UploadFormPortfolio';
 
 // This is the default export: your Admin Page component
 export default async function AdminPage() {
@@ -28,6 +28,7 @@ export default async function AdminPage() {
       
       {/* Show the upload form component */}
       <UploadForm />
+      <UploadFormPortfolio />
     </div>
   );
 }
