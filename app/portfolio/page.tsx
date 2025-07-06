@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function portfolioPage() {
+export default function PortfolioPage() {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {

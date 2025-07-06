@@ -39,17 +39,17 @@ const textVariants = {
   },
 }
 
-const statsVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.42, 0, 1, 1] as [number, number, number, number],
-    },
-  },
-}
+// const statsVariants = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.6,
+//       ease: [0.42, 0, 1, 1] as [number, number, number, number],
+//     },
+//   },
+// }
 
 // function CountUpAnimation({ targetNumber, label, delay = 0 }: { targetNumber: string; label: string; delay?: number }) {
 //   const [count, setCount] = useState(0)
