@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect } from 'react';
 import HeroSection from '@/components/ui/hero';
@@ -17,26 +17,8 @@ export default function HomePage() {
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 1️⃣ Fetch the list of filenames from your API
-  useEffect(() => {
-    fetch('/api/images')
-      .then((res) => res.json())
-      .then((data: string[]) => {
-        // 2️⃣ Build public URLs for each file
-        setImages(data.map((f) => `/uploads/${f}`));
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
 
-  if (loading) {
-    return <p className="p-6 text-center">Loading…</p>;
-  }
-
-  if (images.length === 0) {
-    return <p className="p-6 text-center">No images found.</p>;
-  }
-
+  
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
@@ -63,6 +45,29 @@ export default function HomePage() {
     });
     document.head.appendChild(script);
   }, []);
+
+  
+
+  // 1️⃣ Fetch the list of filenames from your API
+  useEffect(() => {
+    fetch('/api/images')
+      .then((res) => res.json())
+      .then((data: string[]) => {
+        // 2️⃣ Build public URLs for each file
+        setImages(data.map((f) => `/uploads/${f}`));
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <p className="p-6 text-center">Loading…</p>;
+  }
+
+  if (images.length === 0) {
+    return <p className="p-6 text-center">No images found.</p>;
+  }
+
 
 
   return (
