@@ -28,7 +28,7 @@ export default function HeroSection({ images }: HeroSectionProps) {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section id="hero" className="relative h-screen overflow-hidden">
       {/* Slides */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
