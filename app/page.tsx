@@ -13,6 +13,7 @@ import Footer from '@/components/footer';
 import FeaturedWork from '@/components/featured-work';
 import Header from '@/components/navbar';
 
+
 export default function HomePage() {
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
