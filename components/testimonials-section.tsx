@@ -7,7 +7,7 @@ const benefits = [
   {
     icon: Camera,
     title: "Creative Excellence",
-    description: "Cutting-edge equipment and innovative techniques ensure your products reach their visual epitome.",
+    description: "From glossy lifestyle shots to crisp detail-oriented still-lifes, our photographers know how to highlight every unique feature.",
   },
   {
     icon: Clock,
@@ -22,7 +22,7 @@ const benefits = [
   {
     icon: Zap,
     title: "Results-Driven",
-    description: "Images specifically crafted to drive conversions, following platform best practices and guidelines.",
+    description: "Beyond beautiful images, we aim for measurable impact, boosting engagement, driving conversions, and strengthening brand loyalty.",
   },
 ]
 
@@ -73,7 +73,7 @@ export default function WhyChooseUsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">Why Choose Epitome Creatives</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">Why Partner with Epitome Creatives</h2>
           <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function WhyChooseUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We&apos;re passionate about helping brands reach their epitome through powerful visual storytelling. Here&apos;s what sets us apart in the world of creative product photography.
+            At Epitome Creatives, we elevate your brand through striking visual narratives that transform products into must-have experiences. 
           </motion.p>
           <motion.div
             className="w-24 h-px bg-black mx-auto mt-6"

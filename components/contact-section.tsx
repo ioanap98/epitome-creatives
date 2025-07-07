@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import {  Mail, Instagram } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function ContactSection() {
@@ -49,7 +49,7 @@ export default function ContactSection() {
       number: 1,
       title: 'Creative Consultation',
       description:
-        'We discuss your vision, brand goals, and creative requirements via video call or phone',
+        'We discuss your vision, brand goals, and creative requirements via a call',
     },
     {
       number: 2,
@@ -61,7 +61,7 @@ export default function ContactSection() {
       number: 3,
       title: 'Creative Production',
       description:
-        'Professional studio shoots or on-location photography - whatever brings your vision to life',
+        'Bringing your brand`s vision to life with expertly crafted visual content.',
     },
     {
       number: 4,
@@ -82,12 +82,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-light mb-4">
-            Let&apos;s Create Your Epitome
+           Bring Your Vision to Life
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to elevate your brand to its epitome? Tell us about your
-            vision and we&apos;ll create a custom creative solution that exceeds
-            your expectations.
+            Ready to transform your brand into its ultimate expression? Share your goals with us, and we&apos;ll design a bespoke creative strategy that not only meets, but surpasses, your expectations. Let&apos;s craft something extraordinary together.       
           </p>
         </motion.div>
 
@@ -158,7 +156,7 @@ export default function ContactSection() {
                     Lifestyle & Brand Photography
                   </option>
                   <option value="product-videos">
-                    Product Videos & 360° Spins
+                    Product Videos
                   </option>
                   <option value="brand-photography">
                     Complete Brand Photography Package
@@ -229,19 +227,20 @@ export default function ContactSection() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
-                <span>contact@epitomecreatives.com</span>
+                <span>hello@epitomecreatives.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5" />
-                <span>(555) 123-4567</span>
+                <Instagram className="w-5 h-5" />
+                <a
+                  href="https://www.instagram.com/epitome.creatives/"
+                  className="hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @epitome.creatives
+                </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5" />
-                <div>
-                  <span>London-Based, Available UK-Wide</span>
-                  <div className="text-sm">On-location shoots available</div>
-                </div>
-              </div>
+              
             </div>
           </motion.div>
         </div>

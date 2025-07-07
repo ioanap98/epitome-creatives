@@ -20,7 +20,7 @@ const services = [
     icon: RotateCcw,
     title: "Product Videos & GIFs",
     description:
-      "Short reels and stop-motion clips that showcase your products in action—ideal for social and e-commerce.",
+      "Short reels and stop-motion clips that showcase your products in action, ideal for social and e-commerce.",
   },
 ]
 
