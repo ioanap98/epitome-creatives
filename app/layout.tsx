@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'Epitome Creatives',
     images: [
       {
-        url: 'https://www.epitomecreatives.com/logo.png', // use your OG image here if different
+        url: 'https://www.epitomecreatives.com/logo.png', 
         width: 1200,
         height: 630,
         alt: 'Epitome Creatives logo and sample product photo',
