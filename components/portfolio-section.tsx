@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
+import Image from 'next/image';
 
 
 const containerVariants = {
@@ -68,11 +69,13 @@ export default function PortfolioGrid() {
                   transition: { duration: 0.3 },
                 }}
               >
-                <img
-              src={`/portfolio/${filename}`}
-              alt={filename}
-              className="w-full object-cover transition-transform duration-200 hover:scale-105"
-            />
+                <Image
+                  src={`/portfolio/${filename}`}
+                  alt={filename}
+                  fill
+                  className="object-cover transition-transform duration-200 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-center justify-center"
                   initial={{ opacity: 0 }}

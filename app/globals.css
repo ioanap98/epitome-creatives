@@ -11,6 +11,44 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Screenshot-friendly mode: hides fixed UI, disables animations/transitions and forces continuous background */
+.screenshot-mode {
+  background-attachment: fixed !important;
+}
+
+.screenshot-mode * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+.screenshot-mode header.fixed,
+.screenshot-mode header[role="banner"],
+.screenshot-mode .site-header,
+.screenshot-mode .navbar,
+.screenshot-mode .fixed {
+  display: none !important;
+}
+
+.screenshot-mode footer,
+.screenshot-mode .site-footer {
+  display: none !important;
+}
+
+/* prevent hover/transforms from showing in stitched capture */
+.screenshot-mode img,
+.screenshot-mode .group:hover img,
+.screenshot-mode .hover\:scale-105,
+.screenshot-mode .scale-105 {
+  transform: none !important;
+}
+
+/* make images load at full quality when preparing an image */
+.screenshot-mode img {
+  image-rendering: auto !important;
+}
+
+
 
 /* ensure the “flip” faces don’t show through */
 .backface-hidden {

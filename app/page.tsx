@@ -50,14 +50,21 @@ export default function HomePage() {
 
   // 1️⃣ Fetch the list of filenames from your API
   useEffect(() => {
-    fetch('/api/images')
-      .then((res) => res.json())
-      .then((data: string[]) => {
-        // 2️⃣ Build public URLs for each file
-        setImages(data.map((f) => `/uploads/${f}`));
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
+    (async () => {
+      try {
+        const res = await fetch('/api/images');
+        if (!res.ok) throw new Error(`Status ${res.status}`);
+        const data: string[] = await res.json();
+        if (Array.isArray(data)) {
+          // 2️⃣ Build public URLs for each file
+          setImages(data.map((f) => `/uploads/${f}`));
+        }
+      } catch (err) {
+        console.error('Failed to load images', err);
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, []);
 
   if (loading) {

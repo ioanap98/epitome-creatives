@@ -70,7 +70,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-t from-blue-100 to-white text-black h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-t from-blue-100 to-white text-black min-h-screen`}>
+      {/* screenshot toggle: client component */}
+   
       <main>
         {children}
       </main>

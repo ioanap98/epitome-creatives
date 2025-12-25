@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## Admin uploads & environment variables 🔧
+
+- Add an `ADMIN_PASSWORD` environment variable to protect admin upload endpoints (default is `secret123` in dev, **change this** in production).
+- You can control the maximum allowed upload size with `MAX_FILE_SIZE` (bytes). Default is `5242880` (5 MB).
+- Use the `/api/login` endpoint to set the `admin-auth` cookie, then upload files via `/api/upload` or `/api/portfolio` (requests must include credentials/cookies).
+
+These changes improve validation, error handling, and UI feedback for the admin upload forms.
+
+---
+
+Screenshot helpers:
+- Use `?screenshot=1` in the site URL to auto-enable screenshot-friendly mode (hides sticky header/footer, disables animations, forces images to load eagerly and scrolls the page to trigger lazy loading).
+- You can toggle the mode interactively using the floating "Prepare for screenshot" checkbox at the bottom-left of the page.
+- This helps browser full-page capture tools (GoFullPage, Edge Web Capture) create clean, seamless full-page screenshots.
