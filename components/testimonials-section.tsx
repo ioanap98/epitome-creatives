@@ -6,23 +6,23 @@ import { motion } from "framer-motion"
 const benefits = [
   {
     icon: Camera,
-    title: "Creative Excellence",
-    description: "From glossy lifestyle shots to crisp detail-oriented still-lifes, our photographers know how to highlight every unique feature.",
+    title: "Detail-Focused Visuals",
+    description: "Every image is built around your product -   its form, texture, and details - to ensure it’s presented clearly and consistently across your website and marketing channels.",
   },
   {
     icon: Clock,
     title: "Fast Turnaround",
-    description: "Quick delivery without compromising quality. Most projects completed within 1-2 weeks.",
+    description: "A clear process and structured workflow allow most projects to be delivered within 1–2 weeks, without compromising on quality or consistency.",
   },
   {
     icon: Users,
-    title: "Collaborative Approach",
-    description: "One-on-one creative partnership to understand your brand and create images that tell your story.",
+    title: "Structured Collaboration",
+    description: "You’re involved where it matters. Each project begins with a clear brief and visual direction, ensuring the final imagery aligns with your brand and objectives.",
   },
   {
     icon: Zap,
     title: "Results-Driven",
-    description: "Beyond beautiful images, we aim for measurable impact, boosting engagement, driving conversions, and strengthening brand loyalty.",
+    description: "Images are delivered ready for e-commerce, social media, and campaigns - designed to support engagement, trust, and a cohesive brand presence online.",
   },
 ]
 
@@ -73,7 +73,7 @@ export default function WhyChooseUsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">Why Partner with Epitome Creatives</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">How We Approach Product Photography</h2>
           <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}

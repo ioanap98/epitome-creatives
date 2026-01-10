@@ -47,27 +47,27 @@ export default function ContactSection() {
   const steps = [
     {
       number: 1,
-      title: 'Creative Consultation',
+      title: 'Inquiry & Brief',
       description:
-        'We discuss your vision, brand goals, and creative requirements via a call',
+        'Share details about your product, brand, and goals — via the form, email, or a short call.',
     },
     {
       number: 2,
       title: 'Custom Proposal',
       description:
-        'Receive a detailed creative proposal tailored to your specific brand needs',
+        'You’ll receive a clear proposal outlining deliverables, timeline, and pricing.',
     },
     {
       number: 3,
-      title: 'Creative Production',
+      title: 'Shoot & Edit',
       description:
-        'Bringing your brand`s vision to life with expertly crafted visual content.',
+        'Once confirmed, we plan and execute the shoot, followed by careful editing and retouching.',
     },
     {
       number: 4,
-      title: 'Exceptional Delivery',
+      title: 'Delivery',
       description:
-        'High-resolution images delivered within agreed timeline via secure online gallery',
+        'Final images are delivered via a secure online gallery, ready for web and social use.',
     },
   ]
 
@@ -82,10 +82,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-light mb-4">
-           Bring Your Vision to Life
+            Ready to Elevate Your Product Visuals?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your brand into its ultimate expression? Share your goals with us, and we&apos;ll design a bespoke creative strategy that not only meets, but surpasses, your expectations. Let&apos;s craft something extraordinary together.       
+            Share a few details about your product and brand. We’ll come back to you with a clear proposal and next steps.
           </p>
         </motion.div>
 
@@ -98,11 +98,10 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-light mb-4">
-              Request Your Creative Quote
+              Tell Us About Your Project
             </h3>
             <p className="text-gray-600 mb-8">
-              Help us understand your creative vision so we can craft the
-              perfect photography package for your brand.
+              Tell us about your products and we'll create a custom photography package for your brand.
             </p>
 
             <motion.form
@@ -148,24 +147,21 @@ export default function ContactSection() {
                   required
                   className="w-full p-3 border border-gray-300 rounded-md focus:border-black"
                 >
-                  <option value="">Creative photography type *</option>
-                  <option value="ecommerce">
-                    E-commerce Product Photography
+                  <option value="">Select service *</option>
+                  <option value="product-photography">
+                    Product Photography
                   </option>
                   <option value="lifestyle">
-                    Lifestyle & Brand Photography
+                    Lifestyle Shots
                   </option>
                   <option value="product-videos">
-                    Product Videos
+                    Video & Motion Content
                   </option>
-                  <option value="brand-photography">
-                    Complete Brand Photography Package
-                  </option>
-                  <option value="social-content">
-                    Social Media Content Creation
+                  <option value="complete-package">
+                    Complete Package (Photos + Video)
                   </option>
                   <option value="not-sure">
-                    Not sure - need creative consultation
+                    Not sure - need consultation
                   </option>
                 </select>
               </div>
@@ -184,7 +180,7 @@ export default function ContactSection() {
                 className="w-full bg-black text-white hover:bg-gray-800"
                 size="lg"
               >
-                {submitting ? 'Sending…' : 'Get My Creative Quote'}
+                {submitting ? 'Sending…' : 'Request a Quote'}
               </Button>
 
               {result && (
@@ -208,7 +204,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-light mb-8">Our Creative Process</h3>
+            <h3 className="text-2xl font-light mb-8">How It Works</h3>
             <div className="space-y-6 mb-12">
               {steps.map((step) => (
                 <div key={step.number} className="flex items-start space-x-4">

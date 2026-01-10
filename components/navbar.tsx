@@ -33,7 +33,7 @@ export default function Header() {
               variant="outline"
               className="border-black text-black hover:bg-black hover:text-white bg-transparent"
             >
-              Request Quote
+              Book a Product Shoot
             </Button>
           </nav>
 
@@ -61,7 +61,7 @@ export default function Header() {
                 variant="outline"
                 className="border-black text-black hover:bg-black hover:text-white w-fit bg-transparent"
               >
-                Request Quote
+                Book a Product Shoot
               </Button>
             </div>
           </nav>

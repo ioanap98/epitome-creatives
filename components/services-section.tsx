@@ -6,21 +6,21 @@ import { motion } from "framer-motion"
 const services = [
   {
     icon: Camera,
-    title: "E-commerce Photography",
+    title: "Product Photography",
     description:
-      "High-converting product images optimized for online sales. Clean white backgrounds, multiple angles, and detail shots that showcase your products perfectly for Amazon, Shopify, and other platforms.",
+      "Crisp, detailed product images designed for e-commerce. Clean compositions that showcase quality and build buyer confidence.",
   },
   {
     icon: Users,
     title: "Lifestyle Photography",
     description:
-      "Authentic lifestyle imagery that shows your products in real-world contexts. We create compelling scenes that help customers visualize how your products fit into their daily lives.",
+      "Products photographed in context. Natural scenes that help customers visualise use and connect emotionally with your brand.",
   },
   {
     icon: RotateCcw,
-    title: "Product Videos & GIFs",
+    title: "Video & Motion",
     description:
-      "Short reels and stop-motion clips that showcase your products in action, ideal for social and e-commerce.",
+      "Dynamic short-form content for social and product pages. Engaging visuals that stop the scroll and drive conversions.",
   },
 ]
 
@@ -69,7 +69,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">What We Do</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">Our Services</h2>
           <motion.div
             className="w-24 h-px bg-black mx-auto"
             initial={{ width: 0 }}
@@ -133,12 +133,12 @@ export default function ServicesSection() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-3xl font-light mb-6">Why Choose Professional Product Photography?</h3>
+            <h3 className="text-3xl font-light mb-6">The Impact of Professional Visuals</h3>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               {[
-                { number: "67%", text: "Higher conversion rates with professional product images" },
-                { number: "3x", text: "More engagement on social media platforms" },
-                { number: "40%", text: "Reduction in product returns with detailed imagery" },
+                { number: "67%", text: "Higher conversion with quality product imagery" },
+                { number: "3x", text: "More engagement on social platforms" },
+                { number: "40%", text: "Fewer returns with clear, detailed photos" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

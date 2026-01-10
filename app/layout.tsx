@@ -1,39 +1,34 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: 'UK Product Photographer | Epitome Creatives',
+  title: 'Product Photography for Small Brands | Epitome Creatives UK',
   description:
-    'Epitome Creatives offers premium product photography for UK-based e-commerce brands. Specialising in clean, aesthetic, and high-converting visuals for skincare, lifestyle, and wellness products.',
+    'Professional product photography for e-commerce and small brands. Clean, high-converting visuals for skincare, supplements, fashion, and lifestyle products. Based in the UK.',
   keywords: [
-    'UK product photography',
-    'product photographer UK',
-    'ecommerce photography UK',
-    'London product photographer',
-    'aesthetic product photos',
-    'skincare photography UK',
-    'minimal product photography',
+    'product photography UK',
+    'e-commerce photography',
+    'small brand photography',
+    'product photographer London',
+    'skincare photography',
+    'product photos for online stores',
+    'lifestyle product photography',
     'Epitome Creatives'
   ],
   metadataBase: new URL('https://www.epitomecreatives.com'),
   authors: [{ name: 'Epitome Creatives', url: 'https://www.epitomecreatives.com' }],
   creator: 'Epitome Creatives',
   openGraph: {
-    title: 'Epitome Creatives | UK Product Photography',
+    title: 'Product Photography for Small Brands | Epitome Creatives',
     description:
-      'High-quality product photography for small brands across the UK. Skincare, accessories, and wellness products styled to perfection.',
+      'Professional product photography for e-commerce, social media, and product launches. Clean, conversion-focused visuals for small brands across the UK.',
     url: 'https://www.epitomecreatives.com',
     siteName: 'Epitome Creatives',
     images: [
@@ -41,7 +36,7 @@ export const metadata = {
         url: 'https://www.epitomecreatives.com/logo.png', 
         width: 1200,
         height: 630,
-        alt: 'Epitome Creatives logo and sample product photo',
+        alt: 'Epitome Creatives - Product Photography',
       },
     ],
     locale: 'en_GB',
@@ -49,10 +44,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epitome Creatives | UK Product Photographer',
+    title: 'Product Photography for Small Brands | Epitome Creatives',
     description:
-      'Scroll-stopping product photos for brands in the UK. Clean, minimalist visuals tailored to convert.',
-    images: ['https://www.epitomecreatives.com/logo.png'], // use a custom Twitter OG image if available
+      'Clean, professional product photos that drive sales. Serving e-commerce brands and startups across the UK.',
+    images: ['https://www.epitomecreatives.com/logo.png'],
   },
   icons: {
     icon: '/logo.png',
@@ -70,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-t from-blue-100 to-white text-black min-h-screen`}>
+      <body className={`${inter.variable} bg-gradient-to-t from-blue-100 to-white text-black min-h-screen`}>
       {/* screenshot toggle: client component */}
    
       <main>

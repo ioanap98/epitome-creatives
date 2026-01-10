@@ -60,17 +60,17 @@ export default function HeroSection({ images }: HeroSectionProps) {
       />
 
       {/* Centered text & button */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
-        <h1 className="text-5xl md:text-7xl font-light mb-6">
-          Showcase Your Products
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6 max-w-5xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+          Thoughtful Visuals
           <br />
-          <span className="font-normal">in Their Best Light</span>
+         <span className="font-bold">for Growing Brands</span> 
         </h1>
-        <p className="text-xl md:text-2xl mb-8 opacity-90">
-          High-impact imagery for e-commerce, lifestyle & branding
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-10 opacity-95 max-w-3xl leading-relaxed">
+          Clean, consistent visuals designed to showcase your products clearly and professionally.
         </p>
-        <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-          View Portfolio
+        <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold text-sm md:text-base px-8 md:px-10 py-6">
+          Book a Product Shoot
         </Button>
       </div>
 

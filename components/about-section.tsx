@@ -184,9 +184,9 @@ export default function AboutSection() {
 
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 {[
-                  "I’m Ioana, founder and lead photographer at Epitome Creatives, a UK-based studio specializing in product and lifestyle photography. My journey began over a decade ago in high school, when I captured my first portrait series and submitted it to a national photography competition. That experience, and the recognition it brought, sparked a lasting passion for visual storytelling.",
-                  "Although I pursued engineering at university, my studies gave me something unexpected: a deep appreciation for how brands grow and the role strong visuals play in that journey. I realized that photography isn’t just art - it’s strategy.",
-                  "Today, through Epitome Creatives, I help brands elevate their presence through photography that is both strategic and artistic. Whether it’s a clean studio composition or a dynamic lifestyle shot, my mission is to bring your product to life: clearly, creatively, and with purpose.",
+                  "Epitome Creatives is a UK-based studio specialising in product and lifestyle photography for small brands and e-commerce businesses.",
+                  "Founded by Ioana, an engineer-turned-photographer, the studio blends creative vision with strategic thinking to produce clean, purposeful visuals designed for online use.",
+                  "From studio compositions to lifestyle imagery, every shoot is planned with clarity, consistency, and brand impact in mind.",
                 ].map((text, index) => (
                   <motion.p
                     key={index}
