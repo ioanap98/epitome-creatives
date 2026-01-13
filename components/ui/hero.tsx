@@ -69,7 +69,16 @@ export default function HeroSection({ images }: HeroSectionProps) {
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-10 opacity-95 max-w-3xl leading-relaxed">
           Clean, consistent visuals designed to showcase your products clearly and professionally.
         </p>
-        <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold text-sm md:text-base px-8 md:px-10 py-6">
+        <Button 
+          size="lg" 
+          className="bg-white text-black hover:bg-gray-100 font-semibold text-sm md:text-base px-8 md:px-10 py-6"
+          onClick={() => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
           Book a Product Shoot
         </Button>
       </div>

@@ -4,12 +4,19 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import {  Mail, Instagram } from 'lucide-react'
+import {  Mail, Instagram, Copy, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function ContactSection() {
   const [result, setResult] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const [emailCopied, setEmailCopied] = useState(false)
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('hello@epitomecreatives.com')
+    setEmailCopied(true)
+    setTimeout(() => setEmailCopied(false), 2000)
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -49,7 +56,7 @@ export default function ContactSection() {
       number: 1,
       title: 'Inquiry & Brief',
       description:
-        'Share details about your product, brand, and goals — via the form, email, or a short call.',
+        'Share details about your product, brand, and goals - via the form, email, or a short call.',
     },
     {
       number: 2,
@@ -221,9 +228,20 @@ export default function ContactSection() {
 
             <h4 className="text-lg font-medium mb-4">Get In Touch</h4>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 group">
                 <Mail className="w-5 h-5" />
                 <span>hello@epitomecreatives.com</span>
+                <button
+                  onClick={copyEmail}
+                  className="ml-2 p-1.5 rounded hover:bg-gray-100 transition-colors"
+                  title="Copy email"
+                >
+                  {emailCopied ? (
+                    <Check className="w-4 h-4 text-green-600" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-gray-600" />
+                  )}
+                </button>
               </div>
               <div className="flex items-center space-x-3">
                 <Instagram className="w-5 h-5" />

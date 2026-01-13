@@ -69,7 +69,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">Our Services</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">Services</h2>
           <motion.div
             className="w-24 h-px bg-black mx-auto"
             initial={{ width: 0 }}

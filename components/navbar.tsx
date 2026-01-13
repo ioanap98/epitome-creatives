@@ -29,12 +29,6 @@ export default function Header() {
             <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
               Contact
             </Link>
-            <Button
-              variant="outline"
-              className="border-black text-black hover:bg-black hover:text-white bg-transparent"
-            >
-              Book a Product Shoot
-            </Button>
           </nav>
 
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -57,12 +51,7 @@ export default function Header() {
               <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
                 Contact
               </Link>
-              <Button
-                variant="outline"
-                className="border-black text-black hover:bg-black hover:text-white w-fit bg-transparent"
-              >
-                Book a Product Shoot
-              </Button>
+
             </div>
           </nav>
         )}
