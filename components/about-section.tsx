@@ -127,18 +127,23 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div className="space-y-8" variants={imageVariants}>
+            <motion.div className="space-y-8 flex flex-col items-start" variants={imageVariants}>
               <motion.div
-                className="relative aspect-[3/2] overflow-hidden rounded-lg group"
+                className="relative overflow-hidden rounded-lg group bg-black max-w-md"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image
-                  src="/IMG_1493.jpg"
-                  alt="Professional photography studio setup"
-                  fill
-                  className="object-cover"
-                />
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto object-cover object-center"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <source src="/IMG_4867.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"
                   initial={{ opacity: 0 }}
@@ -146,29 +151,6 @@ export default function AboutSection() {
                   transition={{ duration: 0.3 }}
                 />
               </motion.div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { src: "/IMG_1495.jpg", alt: "Studio lighting setup" },
-                  { src: "/IMG_1494.jpg", alt: "Creative photography workspace" },
-                ].map((image, index) => (
-                  <motion.div
-                    key={index}
-                    className="relative aspect-square overflow-hidden rounded-lg group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{
-                      scale: 1.05,
-                      rotate: index === 0 ? 2 : -2,
-                      transition: { duration: 0.3 },
-                    }}
-                  >
-                    <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             <motion.div variants={textVariants}>
