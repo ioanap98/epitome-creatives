@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { Button } from '@/components/ui/button'
 
 
 const containerVariants = {
@@ -117,7 +118,7 @@ const textVariants = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         {/* Centered Title */}
         <motion.div
@@ -174,23 +175,23 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div variants={textVariants}>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                {[
-                  "We're a UK-based creative studio that brings together product photography and web design to help brands stand out and scale.",
-                  "Founded by Ioana, an engineer turned photographer and designer, we understand both the technical and creative sides of building a brand online. From stunning product visuals that stop the scroll to fast, high-converting websites — we create the complete digital presence your brand needs.",
-                  "Whether you're launching a new product, building a Shopify store, or need a full brand package with photography and web design, we focus on clean aesthetics, strategic execution, and results that matter.",
-                ].map((text, index) => (
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    {text}
+                <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                  <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+                    We’re a UK-based creative studio that pairs product photography with conversion-first web design to help brands stand out and grow.
                   </motion.p>
-                ))}
-              </div>
+
+                  <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }}>
+                    Founded by Ioana — an engineer turned photographer and designer — we combine technical precision with thoughtful aesthetics. From scroll-stopping product visuals to fast, shop-ready websites, we deliver assets and experiences that convert.
+                  </motion.p>
+
+                  <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.16 }}>
+                    Whether you’re launching a new product, scaling a Shopify store, or building a portfolio that wins clients, we focus on clarity, performance, and measurable results.
+                  </motion.p>
+
+                  {/* benefit cards removed per request */}
+
+                  {/* CTA moved below the two-column grid to be centered */}
+                </div>
 
               {/* <motion.div
                 className="mt-8 pt-8 border-t border-gray-200"
@@ -210,6 +211,12 @@ export default function AboutSection() {
                 </div>
               </motion.div> */}
             </motion.div>
+          </motion.div>
+
+          <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <Button size="lg" asChild className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-3 rounded-md shadow hover:shadow-lg transition">
+              <a href="#contact">Work with us</a>
+            </Button>
           </motion.div>
         </div>
       </div>

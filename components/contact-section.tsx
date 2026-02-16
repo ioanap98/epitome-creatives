@@ -158,30 +158,30 @@ export default function ContactSection() {
                 <select
                   name="projectType"
                   required
+                  aria-label="Select service"
                   className="w-full p-3 border border-gray-300 rounded-md focus:border-black"
                 >
                   <option value="">Select service *</option>
-                  <option value="web-design">
-                    Website Design & Development
-                  </option>
-                  <option value="product-photography">
-                    Product Photography
-                  </option>
-                  <option value="lifestyle">
-                    Lifestyle Photography
-                  </option>
-                  <option value="product-videos">
-                    Video & Motion Content
-                  </option>
-                  <option value="web-and-photography">
-                    Website + Photography Package
-                  </option>
-                  <option value="complete-package">
-                    Complete Brand Package
-                  </option>
-                  <option value="not-sure">
-                    Not sure - need consultation
-                  </option>
+                  <optgroup label="Web & E-commerce">
+                    <option value="website-design">Website Design & Development</option>
+                    <option value="shopify-customisation">Shopify Store Customisation</option>
+                    <option value="portfolio-website">Portfolio Website</option>
+                    <option value="website-plus-photography">Website + Photography Package</option>
+                  </optgroup>
+                  <optgroup label="Photography & Content">
+                    <option value="product-photography">Product Photography (e‑commerce pack)</option>
+                    <option value="lifestyle-photography">Lifestyle Photography</option>
+                    <option value="studio-pack">Studio / Packshot Sessions</option>
+                    <option value="brand-packaging-photography">Brand & Packaging Photography</option>
+                    <option value="video-motion">Video & Motion Content</option>
+                    <option value="content-retainer">Ongoing Content Retainer</option>
+                  </optgroup>
+                  <optgroup label="Strategy & Full Packages">
+                    <option value="complete-brand-package">Complete Brand Package</option>
+                    <option value="ecommerce-launch">E‑commerce Launch Support</option>
+                  </optgroup>
+                  <option value="not-sure">Not sure — need a consultation</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 

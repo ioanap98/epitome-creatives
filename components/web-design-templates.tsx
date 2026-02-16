@@ -59,7 +59,7 @@ export default function DemoTemplatesSection() {
     }))
   }
   return (
-    <section className="py-24 bg-gray-50">
+    <section id="recent-projects" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -68,9 +68,9 @@ export default function DemoTemplatesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>Recent Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>Recent Projects</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            Real websites we've built for real clients. Each designed to convert visitors into customers.
+            Real websites we've built for real clients — designed to convert visitors into customers.
           </p>
           <motion.div
             className="w-24 h-px bg-black mx-auto"
@@ -85,20 +85,20 @@ export default function DemoTemplatesSection() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-lg overflow-hidden border border-gray-200"
+              className="bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-shadow group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
             >
               {/* Project image carousel */}
-              <div className="relative w-full h-96 bg-gray-100 border-b border-gray-200 group">
+              <div className="relative w-full h-72 md:h-96 bg-gray-100 border-b border-gray-200 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImageIndex[index]}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, scale: 1.02 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
@@ -106,7 +106,7 @@ export default function DemoTemplatesSection() {
                       src={project.images[currentImageIndex[index] || 0]}
                       alt={`${project.name} screenshot ${currentImageIndex[index] + 1}`}
                       fill
-                      className="object-contain"
+                      className="object-contain object-center"
                       priority={index === 0}
                     />
                   </motion.div>
@@ -140,16 +140,13 @@ export default function DemoTemplatesSection() {
 
               {/* Project details */}
               <div className="p-8">
-                <h3 className="text-2xl font-light mb-2" style={{ fontFamily: 'var(--font-playfair), serif' }}>{project.name}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                <h3 className="text-2xl font-light mb-2 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>{project.name}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed text-sm">{project.description}</p>
 
                 {/* Features */}
-                <div className="mb-6 space-y-2">
+                <div className="mb-6 flex flex-wrap gap-2">
                   {project.features.map((feature, fIndex) => (
-                    <div key={fIndex} className="flex items-center gap-2 text-sm text-gray-600">
-                      <div className="w-2 h-2 rounded-full bg-black" />
-                      <span>{feature}</span>
-                    </div>
+                    <span key={fIndex} className="text-xs bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-gray-700">{feature}</span>
                   ))}
                 </div>
 

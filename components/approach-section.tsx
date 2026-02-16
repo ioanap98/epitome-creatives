@@ -32,7 +32,7 @@ const approaches = [
 
 export default function ApproachSection() {
   return (
-    <section id="approach" className="py-24 bg-white">
+    <section id="approach" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -50,38 +50,53 @@ export default function ApproachSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
         </motion.div>
-
-        <motion.div
-          className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {approaches.map((approach, index) => {
-            const IconComponent = approach.icon
-            return (
-              <motion.div
-                key={index}
-                className="text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              >
+          <motion.div
+            className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
+            }}
+          >
+            {approaches.map((approach, index) => {
+              const IconComponent = approach.icon
+              return (
                 <motion.div
-                  className="inline-block mb-4 p-3 bg-gray-50 rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  key={index}
+                  className="text-left group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.05 + index * 0.05 }}
                 >
-                  <IconComponent size={28} className="text-black" />
+                  <motion.div
+                    className="mb-4 flex items-center"
+                  >
+                    <motion.div
+                      className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mr-4 shadow-sm flex-none overflow-hidden p-3"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <IconComponent className="w-11 h-11 text-purple-600" />
+                    </motion.div>
+                    <div>
+                      <motion.h3
+                        className="text-2xl font-light mb-1 text-purple-600"
+                        style={{ fontFamily: 'var(--font-playfair), serif' }}
+                        whileHover={{ color: '#6D28D9' }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {approach.title}
+                      </motion.h3>
+                      <p className="text-gray-600 leading-relaxed max-w-xl">{approach.description}</p>
+                    </div>
+                  </motion.div>
                 </motion.div>
-                <h3 className="text-2xl font-light mb-3 text-black" style={{ fontFamily: 'var(--font-playfair), serif' }}>{approach.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{approach.description}</p>
-              </motion.div>
-            )
-          })}
-        </motion.div>
+              )
+            })}
+          </motion.div>
       </div>
     </section>
   )

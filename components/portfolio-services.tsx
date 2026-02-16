@@ -70,11 +70,22 @@ export default function PortfolioServices() {
                 >
                   <IconComponent size={44} className="text-purple-600" />
                 </motion.div>
-                <h3 className="text-2xl font-light mb-3 text-black" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
+                <h3 className="text-2xl font-light mb-3 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
               </motion.div>
             )
           })}
+        </motion.div>
+        <motion.div
+          className="mt-8 text-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <div className="inline-block bg-white rounded-lg px-6 py-4 shadow-md">
+            <p className="text-sm text-gray-600">Prices starting from: <span className="ml-2 font-medium text-purple-600">150£</span></p>
+          </div>
         </motion.div>
       </div>
     </section>

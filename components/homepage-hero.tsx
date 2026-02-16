@@ -68,21 +68,21 @@ export default function HomepageHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Link href="#contact">
+            <Link href="/product-photography">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-6 text-base font-medium rounded-lg shadow-md hover:shadow-xl transition-all duration-500"
               >
-                Book a Free Brand Audit
+                Product Photography
               </Button>
             </Link>
-            <Link href="#portfolio">
+            <Link href="/web-design">
               <Button
                 variant="outline"
                 size="lg"
                 className="border-2 border-purple-400 bg-white text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:border-purple-500 px-8 py-6 text-base font-medium rounded-lg transition-all shadow-sm hover:shadow-md"
               >
-                View Our Work
+                Web Design
               </Button>
             </Link>
           </motion.div>

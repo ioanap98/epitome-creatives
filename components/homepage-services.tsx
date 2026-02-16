@@ -6,17 +6,17 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
 const services = [
-  {
+    {
     icon: Camera,
     title: 'Product Photography',
     description: 'Professional product visuals designed to elevate your brand and increase trust.',
     cta: 'View Photography Work',
-    href: '/portfolio',
+    href: '/product-photography',
   },
-  {
+    {
     icon: Code2,
     title: 'Web Design & Development',
-    description: 'Clean, modern websites built to showcase your products and convert visitors into customers.',
+    description: 'Modern websites for portfolios, product showcases and e‑commerce — built to showcase and convert.',
     cta: 'View Website Work',
     href: '/web-design',
   },
@@ -82,11 +82,15 @@ export default function ServicesSection() {
                 className="text-center p-8 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <motion.div
-                  className="inline-block mb-6 p-4 bg-white rounded-lg"
+                  className="inline-block mb-6 p-0"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <IconComponent size={40} className="text-black" />
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-2 shadow-sm">
+                    <div className="rounded-full bg-white p-3">
+                      <IconComponent size={24} className="text-purple-600" />
+                    </div>
+                  </div>
                 </motion.div>
                 <h3 className="text-2xl font-light mb-3" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>

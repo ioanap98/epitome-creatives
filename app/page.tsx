@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import HomepageHero from '@/components/homepage-hero';
 import HomepageServices from '@/components/homepage-services';
 import PositioningSection from '@/components/positioning-section';
-import ProcessSection from '@/components/process-section';
 import IdealForSection from '@/components/ideal-for-section';
 import AboutSection from '@/components/about-section';
 import ContactSection from '@/components/contact-section';
@@ -49,7 +48,6 @@ export default function HomePage() {
       <HomepageHero />
       <HomepageServices />
       <PositioningSection />
-      <ProcessSection />
       <IdealForSection />
       <AboutSection />
       <ContactSection />

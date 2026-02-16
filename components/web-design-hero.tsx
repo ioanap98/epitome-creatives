@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 const webDesignImages = [
   '/web_dev/1f60a6eeef1dc215.png',
@@ -105,15 +105,17 @@ export default function WebDesignHero() {
               Book a Free Website Audit
             </Button>
           </Link>
-          <Link href="/portfolio">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-white bg-white/20 backdrop-blur-md text-white hover:bg-white/90 hover:text-purple-600 px-8 py-6 text-base font-medium rounded-lg transition-all shadow-md hover:shadow-xl"
-            >
-              See Our Portfolio
-            </Button>
-          </Link>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => {
+              const el = document.getElementById('recent-projects')
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+            className="border-2 border-white bg-white/20 backdrop-blur-md text-white hover:bg-white/90 hover:text-purple-600 px-8 py-6 text-base font-medium rounded-lg transition-all shadow-md hover:shadow-xl"
+          >
+            See Our Portfolio
+          </Button>
         </motion.div>
       </div>
 

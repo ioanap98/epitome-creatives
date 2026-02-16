@@ -33,23 +33,25 @@ export default function WhatsIncludedSection() {
           />
 
           <motion.div
-            className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto"
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200 text-left"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="p-4 bg-gray-50 rounded-lg border border-gray-200 text-left flex items-center gap-4 hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.08 }}
+                transition={{ duration: 0.5, delay: 0.08 + index * 0.06 }}
               >
-                <Check size={20} className="text-black flex-shrink-0" />
-                <span className="text-base text-gray-700">{feature}</span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center flex-shrink-0">
+                  <Check size={18} className="text-purple-600" />
+                </div>
+                <span className="text-sm text-gray-800 font-medium leading-relaxed">{feature}</span>
               </motion.div>
             ))}
           </motion.div>
