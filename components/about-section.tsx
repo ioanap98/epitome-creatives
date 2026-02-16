@@ -119,6 +119,26 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-6">
+        {/* Centered Title */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+            About Epitome Creatives
+          </h2>
+          <motion.div
+            className="w-24 h-px bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mx-auto"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
+        </motion.div>
+
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center"
@@ -154,21 +174,11 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div variants={textVariants}>
-              <motion.h2
-                className="text-4xl md:text-5xl font-light mb-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                About Epitome Creatives
-              </motion.h2>
-
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 {[
-                  "Epitome Creatives is a UK-based studio specialising in product and lifestyle photography for small brands and e-commerce businesses.",
-                  "Founded by Ioana, an engineer-turned-photographer, the studio blends creative vision with strategic thinking to produce clean, purposeful visuals designed for online use.",
-                  "From studio compositions to lifestyle imagery, every shoot is planned with clarity, consistency, and brand impact in mind.",
+                  "We're a UK-based creative studio that brings together product photography and web design to help brands stand out and scale.",
+                  "Founded by Ioana, an engineer turned photographer and designer, we understand both the technical and creative sides of building a brand online. From stunning product visuals that stop the scroll to fast, high-converting websites — we create the complete digital presence your brand needs.",
+                  "Whether you're launching a new product, building a Shopify store, or need a full brand package with photography and web design, we focus on clean aesthetics, strategic execution, and results that matter.",
                 ].map((text, index) => (
                   <motion.p
                     key={index}

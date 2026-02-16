@@ -48,7 +48,7 @@ export default function PortfolioGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-8">Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-8" style={{ fontFamily: 'var(--font-playfair), serif' }}>Portfolio</h2>
         </motion.div>
 
         <motion.div

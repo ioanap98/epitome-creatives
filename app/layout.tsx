@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 
@@ -8,10 +8,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata = {
-  title: 'Product Photography for Small Brands | Epitome Creatives UK',
+  title: 'Product Photography & Web Design | Epitome Creatives UK',
   description:
-    'Professional product photography for e-commerce and small brands. Clean, high-converting visuals for skincare, supplements, fashion, and lifestyle products. Based in the UK.',
+    'Professional product photography and web design for e-commerce brands. Clean, high-converting visuals and websites for skincare, supplements, fashion, and lifestyle products. Based in the UK.',
   keywords: [
     'product photography UK',
     'e-commerce photography',
@@ -26,9 +32,9 @@ export const metadata = {
   authors: [{ name: 'Epitome Creatives', url: 'https://www.epitomecreatives.com' }],
   creator: 'Epitome Creatives',
   openGraph: {
-    title: 'Product Photography for Small Brands | Epitome Creatives',
+    title: 'Product Photography & Web Design | Epitome Creatives',
     description:
-      'Professional product photography for e-commerce, social media, and product launches. Clean, conversion-focused visuals for small brands across the UK.',
+      'Professional product photography and web design for e-commerce, social media, and product launches. Clean, conversion-focused visuals and websites for brands across the UK.',
     url: 'https://www.epitomecreatives.com',
     siteName: 'Epitome Creatives',
     images: [
@@ -44,9 +50,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Product Photography for Small Brands | Epitome Creatives',
+    title: 'Product Photography & Web Design | Epitome Creatives',
     description:
-      'Clean, professional product photos that drive sales. Serving e-commerce brands and startups across the UK.',
+      'Clean, professional product photos and high-converting websites for e-commerce brands across the UK.',
     images: ['https://www.epitomecreatives.com/logo.png'],
   },
   icons: {
@@ -65,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} bg-gradient-to-t from-blue-100 to-white text-black min-h-screen`}>
+      <body className={`${inter.variable} ${playfair.variable} bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-black min-h-screen`}>
       {/* screenshot toggle: client component */}
    
       <main>

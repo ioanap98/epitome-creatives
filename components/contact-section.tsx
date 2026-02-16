@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import {  Mail, Instagram, Copy, Check } from 'lucide-react'
+import {  Mail, Instagram, Copy, Check, MessageSquare, FileText, Sparkles, Package } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function ContactSection() {
@@ -57,24 +57,30 @@ export default function ContactSection() {
       title: 'Inquiry & Brief',
       description:
         'Share details about your product, brand, and goals - via the form, email, or a short call.',
+      icon: MessageSquare,
+      color: 'from-purple-400 to-pink-400',
     },
     {
       number: 2,
       title: 'Custom Proposal',
       description:
-        'You’ll receive a clear proposal outlining deliverables, timeline, and pricing.',
-    },
+        'You’ll receive a clear proposal outlining deliverables, timeline, and pricing.',      icon: FileText,
+      color: 'from-pink-400 to-purple-500',    },
     {
       number: 3,
-      title: 'Shoot & Edit',
+      title: 'Production & Creation',
       description:
-        'Once confirmed, we plan and execute the shoot, followed by careful editing and retouching.',
+        'Once confirmed, we bring your vision to life - whether through photography, design, or development.',
+      icon: Sparkles,
+      color: 'from-purple-500 to-indigo-500',
     },
     {
       number: 4,
-      title: 'Delivery',
+      title: 'Delivery & Support',
       description:
-        'Final images are delivered via a secure online gallery, ready for web and social use.',
+        'Final deliverables are provided in your preferred format, ready to use. We\'re here for any follow-up support.',
+      icon: Package,
+      color: 'from-indigo-500 to-blue-500',
     },
   ]
 
@@ -88,11 +94,11 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">
-            Ready to Elevate Your Product Visuals?
+          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+            Ready to Elevate Your Brand?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Share a few details about your product and brand. We’ll come back to you with a clear proposal and next steps.
+            Whether you need stunning product visuals or a high-converting website, share a few details about your brand and we'll come back with a clear proposal.
           </p>
         </motion.div>
 
@@ -104,11 +110,11 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-light mb-4">
+            <h3 className="text-2xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
               Tell Us About Your Project
             </h3>
             <p className="text-gray-600 mb-8">
-              Tell us about your products and we'll create a custom photography package for your brand.
+              Tell us about your brand goals and we'll create a custom package tailored to your needs.
             </p>
 
             <motion.form
@@ -155,17 +161,23 @@ export default function ContactSection() {
                   className="w-full p-3 border border-gray-300 rounded-md focus:border-black"
                 >
                   <option value="">Select service *</option>
+                  <option value="web-design">
+                    Website Design & Development
+                  </option>
                   <option value="product-photography">
                     Product Photography
                   </option>
                   <option value="lifestyle">
-                    Lifestyle Shots
+                    Lifestyle Photography
                   </option>
                   <option value="product-videos">
                     Video & Motion Content
                   </option>
+                  <option value="web-and-photography">
+                    Website + Photography Package
+                  </option>
                   <option value="complete-package">
-                    Complete Package (Photos + Video)
+                    Complete Brand Package
                   </option>
                   <option value="not-sure">
                     Not sure - need consultation
@@ -175,7 +187,7 @@ export default function ContactSection() {
 
               <Textarea
                 name="projectDetails"
-                placeholder="Describe your products, brand style..."
+                placeholder="Describe your project, brand style, goals, timeline..."
                 required
                 className="border-gray-300 focus:border-black"
                 rows={4}
@@ -184,7 +196,7 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-black text-white hover:bg-gray-800"
+                className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white shadow-sm hover:shadow-lg transition-all duration-500"
                 size="lg"
               >
                 {submitting ? 'Sending…' : 'Request a Quote'}
@@ -211,19 +223,55 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-light mb-8">How It Works</h3>
-            <div className="space-y-6 mb-12">
-              {steps.map((step) => (
-                <div key={step.number} className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">
-                    {step.number}
-                  </div>
-                  <div>
-                    <div className="font-medium">{step.title}</div>
-                    <div className="text-gray-600">{step.description}</div>
-                  </div>
-                </div>
-              ))}
+            <h3 className="text-2xl font-light mb-10" style={{ fontFamily: 'var(--font-playfair), serif' }}>How It Works</h3>
+            <div className="relative">
+              {/* Vertical Connecting Line */}
+              <motion.div
+                className="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-purple-200 via-pink-200 to-blue-200"
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3 }}
+                style={{ transformOrigin: 'top' }}
+              />
+
+              <div className="space-y-8 mb-12">
+                {steps.map((step, index) => (
+                  <motion.div
+                    key={step.number}
+                    className="flex items-start gap-4 relative"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  >
+                    {/* Icon Circle */}
+                    <div className="relative flex-shrink-0 z-10">
+                      <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md border-4 border-white">
+                        <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-20`} />
+                        <step.icon className={`w-5 h-5 text-transparent bg-gradient-to-br ${step.color} bg-clip-text`} strokeWidth={2} />
+                      </div>
+
+                      {/* Step Number Badge */}
+                      <div className="absolute -top-1 -right-1">
+                        <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white text-xs font-semibold shadow-md`}>
+                          {step.number}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-grow pt-2">
+                      <h4 className="text-lg font-medium mb-1.5 text-gray-800" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                        {step.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             <h4 className="text-lg font-medium mb-4">Get In Touch</h4>

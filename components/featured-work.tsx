@@ -88,7 +88,7 @@ export default function FeaturedWork() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4">Featured Work</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>Featured Work</h2>
           <motion.div
             className="w-24 h-px bg-black mx-auto"
             initial={{ width: 0 }}

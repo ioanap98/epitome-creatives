@@ -17,16 +17,16 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="text-gray-600 hover:text-black transition-colors">
+            <Link href="#services" className="text-gray-600 hover:text-purple-500 transition-colors">
               Services
             </Link>
-            <Link href="#portfolio" className="text-gray-600 hover:text-black transition-colors">
+            <Link href="/portfolio" className="text-gray-600 hover:text-purple-500 transition-colors">
               Portfolio
             </Link>
-            <Link href="#about" className="text-gray-600 hover:text-black transition-colors">
-              About
+            <Link href="/web-design" className="text-gray-600 hover:text-purple-500 transition-colors">
+              Web Design
             </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
+            <Link href="#contact" className="text-gray-600 hover:text-purple-500 transition-colors">
               Contact
             </Link>
           </nav>
@@ -39,16 +39,16 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
             <div className="flex flex-col space-y-4">
-              <Link href="#portfolio" className="text-gray-600 hover:text-black transition-colors">
-                Portfolio
-              </Link>
-              <Link href="#services" className="text-gray-600 hover:text-black transition-colors">
+              <Link href="#services" className="text-gray-600 hover:text-purple-500 transition-colors">
                 Services
               </Link>
-              <Link href="#about" className="text-gray-600 hover:text-black transition-colors">
-                About
+              <Link href="/portfolio" className="text-gray-600 hover:text-purple-500 transition-colors">
+                Portfolio
               </Link>
-              <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
+              <Link href="/web-design" className="text-gray-600 hover:text-purple-500 transition-colors">
+                Web Design
+              </Link>
+              <Link href="#contact" className="text-gray-600 hover:text-purple-500 transition-colors">
                 Contact
               </Link>
 

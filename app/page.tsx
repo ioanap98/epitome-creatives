@@ -1,23 +1,18 @@
 'use client'
 
-import { useState, useEffect } from 'react';
-import HeroSection from '@/components/ui/hero';
-// import TickerTape from '@/components/tickertape_animation';
-import PortfolioGrid from '@/components/portfolio-section';
-import ServicesSection from '@/components/services-section';
+import { useEffect } from 'react';
+import HomepageHero from '@/components/homepage-hero';
+import HomepageServices from '@/components/homepage-services';
+import PositioningSection from '@/components/positioning-section';
+import ProcessSection from '@/components/process-section';
+import IdealForSection from '@/components/ideal-for-section';
 import AboutSection from '@/components/about-section';
-import WhyChooseUsSection from '@/components/testimonials-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
-import FeaturedWork from '@/components/featured-work';
 import Header from '@/components/navbar';
 
 
 export default function HomePage() {
-  const [images, setImages] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
-
-
   
   useEffect(() => {
     const script = document.createElement('script');
@@ -33,7 +28,7 @@ export default function HomePage() {
         "addressLocality": "London",
         "addressCountry": "GB"
       },
-      "description": "Epitome Creatives is a UK-based product photography studio specialising in clean, minimalist, high-converting visuals for e-commerce brands. We work with skincare, lifestyle, accessories, and wellness brands to deliver standout digital content.",
+      "description": "Epitome Creatives is a UK-based product photography studio and web design agency specialising in clean, minimalist, high-converting visuals for small product-based brands. We work with skincare, lifestyle, supplements, and fashion brands to deliver standout digital content and websites.",
       "priceRange": "££",
       "areaServed": {
         "@type": "Country",
@@ -46,53 +41,19 @@ export default function HomePage() {
     document.head.appendChild(script);
   }, []);
 
-  
-
-  // 1️⃣ Fetch the list of filenames from your API
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch('/api/images');
-        if (!res.ok) throw new Error(`Status ${res.status}`);
-        const data: string[] = await res.json();
-        if (Array.isArray(data)) {
-          // 2️⃣ Build public URLs for each file
-          setImages(data.map((f) => `/uploads/${f}`));
-        }
-      } catch (err) {
-        console.error('Failed to load images', err);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
-
-  if (loading) {
-    return <p className="p-6 text-center">Loading…</p>;
-  }
-
-  if (images.length === 0) {
-    return <p className="p-6 text-center">No images found.</p>;
-  }
-
 
 
   return (
     <>
       <Header />
-      <HeroSection images={images} />
-      {/* <TickerTape /> */}
-      <ServicesSection />
-      <PortfolioGrid />
-      <FeaturedWork />
+      <HomepageHero />
+      <HomepageServices />
+      <PositioningSection />
+      <ProcessSection />
+      <IdealForSection />
       <AboutSection />
-      <WhyChooseUsSection />
       <ContactSection />
       <Footer />
-      
-
-
-
     </>
   );
 }
