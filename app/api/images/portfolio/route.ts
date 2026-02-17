@@ -9,7 +9,14 @@ export async function GET() {
     const exists = await fs.stat(folderPath).then(() => true).catch(() => false);
     if (!exists) return NextResponse.json([]);
     const files = await fs.readdir(folderPath);
-    return NextResponse.json(files);
+    // Return array of { filename, type }
+    const data = files
+      .filter(f => /\.(jpe?g|png|webp|gif|mp4)$/i.test(f))
+      .map(f => ({
+        filename: f,
+        type: /\.mp4$/i.test(f) ? 'video' : 'image',
+      }));
+    return NextResponse.json(data);
   } catch (err) {
     console.error('List portfolio images error', err);
     return NextResponse.json([], { status: 500 });

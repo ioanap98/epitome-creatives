@@ -18,8 +18,11 @@ const containerVariants = {
 
 
 
+
+
 export default function PortfolioGrid() {
-  const [images, setImages] = useState<string[] | null>(null);
+  const [items, setItems] = useState<Array<{ filename: string; type: 'image' | 'video' }> | null>(null);
+  const [shuffled, setShuffled] = useState<typeof items>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -29,14 +32,22 @@ export default function PortfolioGrid() {
         return res.json();
       })
       .then((data) => {
-        if (Array.isArray(data)) setImages(data);
-        else throw new Error('Invalid data');
+        if (Array.isArray(data)) {
+          setItems(data);
+          // Shuffle once after fetch
+          const arr = [...data];
+          for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
+          setShuffled(arr);
+        } else throw new Error('Invalid data');
       })
       .catch((err) => setError(err.message));
   }, []);
 
   if (error) return <div className="p-6 text-red-600">Error: {error}</div>;
-  if (!images) return <div className="p-6">Loading…</div>;
+  if (!shuffled) return <div className="p-6">Loading…</div>;
 
   return (
     <section id="portfolio" className="py-24">
@@ -58,7 +69,7 @@ export default function PortfolioGrid() {
           animate="visible"
         >
           <AnimatePresence mode="wait">
-            {images.map((filename) => (
+            {shuffled.map(({ filename, type }) => (
               <motion.div
                 key={filename}
                 className="group relative overflow-hidden bg-gray-100 aspect-square"
@@ -69,13 +80,24 @@ export default function PortfolioGrid() {
                   transition: { duration: 0.3 },
                 }}
               >
-                <Image
-                  src={`/portfolio/${filename}`}
-                  alt={filename}
-                  fill
-                  className="object-cover transition-transform duration-200 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+                {type === 'image' ? (
+                  <Image
+                    src={`/portfolio/${filename}`}
+                    alt={filename}
+                    fill
+                    className="object-cover object-center transition-transform duration-200 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center aspect-square bg-black">
+                    <video
+                      src={`/portfolio/${filename}`}
+                      controls
+                      className="object-cover object-center w-full h-full rounded"
+                      style={{ background: '#000', maxHeight: '100%', maxWidth: '100%' }}
+                    />
+                  </div>
+                )}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-center justify-center"
                   initial={{ opacity: 0 }}
@@ -87,7 +109,7 @@ export default function PortfolioGrid() {
                     initial={{ y: 20, opacity: 0 }}
                     whileHover={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
-                  >            
+                  >
                   </motion.div>
                 </motion.div>
               </motion.div>
