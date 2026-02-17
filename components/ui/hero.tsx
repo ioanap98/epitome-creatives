@@ -86,7 +86,7 @@ export default function HeroSection({ images }: HeroSectionProps) {
       {/* Navigation arrows */}
       <motion.button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 hidden sm:block"
         whileHover={{ scale: 1.1, x: -5 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Previous slide"
@@ -95,7 +95,7 @@ export default function HeroSection({ images }: HeroSectionProps) {
       </motion.button>
       <motion.button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 hidden sm:block"
         whileHover={{ scale: 1.1, x: 5 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Next slide"

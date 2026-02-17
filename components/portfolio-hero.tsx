@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
 
 export default function PortfolioHero() {
   const [images, setImages] = useState<string[]>([])
@@ -121,27 +122,20 @@ export default function PortfolioHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <a href="#contact">
-            <button
-              className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-500 shadow-md hover:shadow-xl"
-            >
-              Book a Product Shoot
-            </button>
-          </a>
-          <a href="#approach">
-            <button
-              className="border-2 border-white bg-white/20 backdrop-blur-md text-white hover:bg-white/90 hover:text-purple-600 px-8 py-6 text-base font-medium rounded-lg transition-all shadow-md hover:shadow-xl"
-            >
-              Our Approach
-            </button>
-          </a>
+          <Button size="lg" asChild className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-500 shadow-md hover:shadow-xl">
+            <a href="#contact">Book a Product Shoot</a>
+          </Button>
+
+          <Button variant="outline" size="lg" asChild className="border-2 border-white bg-white/20 backdrop-blur-md text-white hover:bg-white/90 hover:text-purple-600 px-8 py-6 text-base font-medium rounded-lg transition-all shadow-md hover:shadow-xl">
+            <a href="#approach">Our Approach</a>
+          </Button>
         </motion.div>
       </div>
 
       {/* Navigation arrows */}
       <motion.button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors hidden sm:block"
         whileHover={{ scale: 1.1, x: -5 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Previous slide"
@@ -151,7 +145,7 @@ export default function PortfolioHero() {
 
       <motion.button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors hidden sm:block"
         whileHover={{ scale: 1.1, x: 5 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Next slide"

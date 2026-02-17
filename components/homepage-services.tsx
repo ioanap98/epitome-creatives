@@ -86,9 +86,9 @@ export default function ServicesSection() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-2 shadow-sm">
-                    <div className="rounded-full bg-white p-3">
-                      <IconComponent size={24} className="text-purple-600" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-2 shadow-sm">
+                    <div className="rounded-full bg-white p-2 md:p-3">
+                      <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />
                     </div>
                   </div>
                 </motion.div>

@@ -1,3 +1,40 @@
+export const metadata = {
+  title: 'Admin Panel | Epitome Creatives',
+  description: 'Admin panel for Epitome Creatives. Manage uploads, portfolio, and website content securely.',
+  keywords: [
+    'admin panel',
+    'content management',
+    'Epitome Creatives admin',
+    'upload management',
+    'portfolio admin',
+    'website admin'
+  ],
+  metadataBase: new URL('https://www.epitomecreatives.com'),
+  authors: [{ name: 'Epitome Creatives', url: 'https://www.epitomecreatives.com' }],
+  creator: 'Epitome Creatives',
+  openGraph: {
+    title: 'Admin Panel | Epitome Creatives',
+    description: 'Admin panel for Epitome Creatives. Securely manage uploads, portfolio, and website content.',
+    url: 'https://www.epitomecreatives.com/admin',
+    siteName: 'Epitome Creatives',
+    images: [
+      {
+        url: 'https://www.epitomecreatives.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Epitome Creatives Admin',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Admin Panel | Epitome Creatives',
+    description: 'Admin panel for Epitome Creatives. Manage uploads and content.',
+    images: ['https://www.epitomecreatives.com/logo.png'],
+  },
+};
 // Import the cookies API to read cookies on the server
 import { cookies } from 'next/headers';
 // Import the redirect function to send users to another page if needed

@@ -69,12 +69,12 @@ export default function PositioningSection() {
                 whileHover={{ y: -6 }}
               >
                 {/* Icon */}
-                <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mb-4 transition-transform`}>
+                <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mb-4 transition-transform mx-auto`}>
                   <problem.icon className={`w-10 h-10 text-purple-600`} strokeWidth={2} />
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-light text-purple-600 mb-2" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                <h3 className="text-2xl font-light text-purple-600 mb-2 mx-auto text-center" style={{ fontFamily: 'var(--font-playfair), serif' }}>
                   {problem.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">

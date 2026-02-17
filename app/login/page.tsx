@@ -1,3 +1,39 @@
+export const metadata = {
+  title: 'Admin Login | Epitome Creatives',
+  description: 'Login to the Epitome Creatives admin panel to manage uploads, portfolio, and website content securely.',
+  keywords: [
+    'admin login',
+    'Epitome Creatives login',
+    'content management login',
+    'portfolio admin login',
+    'website admin login'
+  ],
+  metadataBase: new URL('https://www.epitomecreatives.com'),
+  authors: [{ name: 'Epitome Creatives', url: 'https://www.epitomecreatives.com' }],
+  creator: 'Epitome Creatives',
+  openGraph: {
+    title: 'Admin Login | Epitome Creatives',
+    description: 'Login to the Epitome Creatives admin panel to manage uploads and content.',
+    url: 'https://www.epitomecreatives.com/login',
+    siteName: 'Epitome Creatives',
+    images: [
+      {
+        url: 'https://www.epitomecreatives.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Epitome Creatives Admin Login',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Admin Login | Epitome Creatives',
+    description: 'Login to the Epitome Creatives admin panel.',
+    images: ['https://www.epitomecreatives.com/logo.png'],
+  },
+};
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';

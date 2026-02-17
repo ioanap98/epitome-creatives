@@ -96,12 +96,12 @@ export default function ServicesSection() {
             >
               <div className="mb-8 flex justify-center">
                 <motion.div
-                  className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-2 shadow-sm group-hover:shadow-xl transition-shadow duration-500"
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-2 shadow-sm group-hover:shadow-xl transition-shadow duration-500"
                   whileHover="hover"
                   variants={iconVariants}
                 >
-                  <div className="rounded-full bg-white p-2">
-                    <service.icon className="w-10 h-10 text-purple-600" />
+                  <div className="rounded-full bg-white p-1 md:p-2">
+                    <service.icon className="w-7 h-7 md:w-10 md:h-10 text-purple-600" />
                   </div>
                 </motion.div>
               </div>

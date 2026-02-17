@@ -75,11 +75,11 @@ export default function ApproachSection() {
                     className="mb-4 flex items-center"
                   >
                     <motion.div
-                      className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mr-4 shadow-sm flex-none overflow-hidden p-3"
+                      className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mr-4 shadow-sm flex-none overflow-hidden p-2"
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <IconComponent className="w-11 h-11 text-purple-600" />
+                      <IconComponent className="w-7 h-7 text-purple-600" />
                     </motion.div>
                     <div>
                       <motion.h3

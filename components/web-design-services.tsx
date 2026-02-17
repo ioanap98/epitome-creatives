@@ -64,11 +64,11 @@ export default function WebDesignServicesSection() {
                 transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               >
                 <motion.div
-                  className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-6 shadow-sm"
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 flex items-center justify-center mx-auto mb-6 shadow-sm"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <IconComponent size={44} className="text-purple-600" />
+                  <IconComponent className="w-7 h-7 md:w-11 md:h-11 text-purple-600" />
                 </motion.div>
                 <h3 className="text-2xl font-light mb-3 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
