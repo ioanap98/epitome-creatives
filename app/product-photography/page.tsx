@@ -37,7 +37,6 @@ export const metadata = {
     images: ['https://www.epitomecreatives.com/logo.png'],
   },
 };
-'use client'
 
 import Header from '@/components/navbar'
 import PortfolioHero from '@/components/portfolio-hero'
