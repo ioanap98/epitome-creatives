@@ -128,16 +128,10 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 text-black" style={{ fontFamily: 'var(--font-playfair), serif' }}>
             About Epitome Creatives
           </h2>
-          <motion.div
-            className="w-24 h-px bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mx-auto"
-            initial={{ width: 0 }}
-            whileInView={{ width: 96 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          />
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 rounded-full mx-auto mb-6" />
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -175,43 +169,51 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div variants={textVariants}>
-                <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
+                  {/* Intro Paragraph */}
                   <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                    We’re a UK-based creative studio that pairs product photography with conversion-first web design to help brands stand out and grow.
+                    Epitome Creatives was built to help product-based brands and creatives establish a strong, premium digital presence from day one. We combine strategic web design with high-quality product visuals to create brands that look cohesive, credible, and ready to grow.
                   </motion.p>
-
-                  <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }}>
-                    Founded by Ioana — an engineer turned photographer and designer — we combine technical precision with thoughtful aesthetics. From scroll-stopping product visuals to fast, shop-ready websites, we deliver assets and experiences that convert.
-                  </motion.p>
-
-                  <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.16 }}>
-                    Whether you’re launching a new product, scaling a Shopify store, or building a portfolio that wins clients, we focus on clarity, performance, and measurable results.
-                  </motion.p>
-
-                  {/* benefit cards removed per request */}
-
-                  {/* CTA moved below the two-column grid to be centered */}
                 </div>
-
-              {/* <motion.div
-                className="mt-8 pt-8 border-t border-gray-200"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="grid grid-cols-3 gap-8 text-center">
-                  {[
-                    { number: "100+", label: "Projects Completed" },
-                    { number: "5", label: "Years Experience" },
-                    { number: "50+", label: "Happy Clients" },
-                  ].map((stat, index) => (
-                    <CountUpAnimation key={index} targetNumber={stat.number} label={stat.label} delay={index * 0.1} />
-                  ))}
-                </div>
-              </motion.div> */}
             </motion.div>
           </motion.div>
+
+          {/* Subheading, Differentiation Blocks, and Closing Line moved below the grid */}
+          <motion.h3 className="text-2xl md:text-3xl font-light text-purple-600 mb-4 mt-16 text-center" style={{ fontFamily: 'var(--font-playfair), serif' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }}>
+            More Than Design — A Structured Brand Foundation
+          </motion.h3>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Card visual hierarchy: add shadow, border, and subtle gradient */}
+            <motion.div className="bg-white bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl border border-gray-200 shadow-xl p-8 flex flex-col" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.12 }}>
+              <h4 className="text-xl font-light text-purple-600 mb-2" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                Visual + Technical Approach
+              </h4>
+              <p className="text-gray-700 text-base">
+                Most designers focus only on aesthetics. Most developers focus only on functionality. We bridge both — aligning product presentation with clean, structured web builds so your brand feels intentional at every touchpoint.
+              </p>
+            </motion.div>
+            <motion.div className="bg-white bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl border border-gray-200 shadow-xl p-8 flex flex-col" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.16 }}>
+              <h4 className="text-xl font-light text-purple-600 mb-2" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                Built for Growing Brands
+              </h4>
+              <p className="text-gray-700 text-base">
+                We specialise in working with early-stage product businesses and creatives who need clarity, not complexity. Every project is tailored to help you launch professionally without unnecessary technical overwhelm.
+              </p>
+            </motion.div>
+            <motion.div className="bg-white bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl border border-gray-200 shadow-xl p-8 flex flex-col" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.20 }}>
+              <h4 className="text-xl font-light text-purple-600 mb-2" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                Designed to Build Trust
+              </h4>
+              <p className="text-gray-700 text-base">
+                From layout structure to image composition, every decision is made with one goal: building confidence in your brand and guiding visitors toward action.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.p className="mt-8 text-center text-lg text-gray-700" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.24 }}>
+            If you’re building something meaningful, we help you present it the right way.
+          </motion.p>
 
           <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <Button size="lg" asChild className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-3 rounded-md shadow hover:shadow-lg transition">
