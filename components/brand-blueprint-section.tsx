@@ -3,7 +3,7 @@ import React from "react";
 export default function BrandBlueprintSection() {
   return (
     <section
-        className="py-24 bg-white border-b border-gray-100"
+      className="py-24 bg-gray-50 border-b border-gray-100"
       aria-labelledby="blueprint-title"
     >
       <div className="container mx-auto px-6">
@@ -34,28 +34,24 @@ export default function BrandBlueprintSection() {
             ].map((item, idx) => (
               <div
                 key={item}
-                className="relative p-6 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all group flex flex-col items-center justify-center text-center"
+                className="flex items-start gap-3 p-6 bg-white rounded-2xl border border-gray-200 shadow-lg"
+                style={{ minHeight: 80 }}
               >
-                <span className="rounded-full p-2 bg-gradient-to-tr from-pink-300 via-purple-400 to-blue-400 mb-4">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600"><path d="M5 9l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </span>
-                <span className="text-base text-gray-700 font-medium">{item}</span>
+                <div className="rounded-full p-2 bg-gradient-to-tr from-pink-300 via-purple-400 to-blue-400 flex-shrink-0">
+                  <div className="rounded-full bg-white p-1">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600"><path d="M5 9l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                </div>
+                <div className="text-base text-gray-700">{item}</div>
               </div>
             ))}
           </div>
-          <div className="text-center bg-white rounded-2xl p-8 border border-gray-200 shadow-lg max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/hello-epitomecreatives/30min" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-10 px-6" style={{ fontFamily: 'var(--font-geist-sans)' }}>
-                  Book Your Free Blueprint Call
-                </button>
-              </a>
-              <a href="#contact" tabIndex={0}>
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-10 px-6" style={{ fontFamily: 'var(--font-geist-sans)' }}>
-                  Start a Project
-                </button>
-              </a>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+            <a href="https://calendly.com/hello-epitomecreatives/30min" target="_blank" rel="noopener noreferrer" tabIndex={0}>
+              <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-500" style={{ fontFamily: 'var(--font-geist-sans)' }}>
+                Book Your Free Blueprint Call
+              </button>
+            </a>
           </div>
         </div>
       </div>

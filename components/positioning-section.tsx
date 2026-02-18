@@ -26,7 +26,7 @@ const problems = [
 
 export default function PositioningSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white border-b border-gray-100">
       <div className="container mx-auto px-6">
         <motion.div
           className="max-w-4xl mx-auto"

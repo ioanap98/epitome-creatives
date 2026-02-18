@@ -118,7 +118,7 @@ const textVariants = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="about" className="py-24 bg-gray-50 border-b border-gray-100">
       <div className="container mx-auto px-6">
         {/* Centered Title */}
         <motion.div
@@ -211,8 +211,8 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          <motion.p className="mt-8 text-center text-lg text-gray-700" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.24 }}>
-            If you’re building something meaningful, we help you present it the right way.
+          <motion.p className="mt-8 text-center text-lg text-gray-700 font-semibold" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.24 }}>
+            Ready to stand out? We help ambitious brands and creators look premium, earn trust, and turn visitors into loyal fans.
           </motion.p>
 
           <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
