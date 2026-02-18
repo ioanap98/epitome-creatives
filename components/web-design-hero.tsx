@@ -97,14 +97,14 @@ export default function WebDesignHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <Link href="#contact-section">
+          <a href="https://calendly.com/hello-epitomecreatives/30min" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-8 py-6 text-base font-medium rounded-lg shadow-md hover:shadow-xl transition-all duration-500"
             >
-              Book a Free Website Audit
+              Book Your Free Blueprint Call
             </Button>
-          </Link>
+          </a>
           <Button
             variant="outline"
             size="lg"

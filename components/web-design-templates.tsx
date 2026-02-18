@@ -10,7 +10,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const projects = [
   {
     name: 'Pilates Instructor Website',
-    description: 'Designed a simple one-page site to clearly present services, session types, and booking options—helping the client turn Instagram traffic into inquiries.',
+    description: '',
+    goal: 'Turn Instagram traffic into structured inquiries.',
+    whatWeDid: 'Clear service hierarchy, booking integration, mobile-first layout.',
     images: [
       '/web_dev/pilates_image_1.png',
       '/web_dev/pilates_image_2.png',
@@ -23,7 +25,9 @@ const projects = [
   },
   {
     name: 'Photography Portfolio Website',
-    description: 'Built a visual-first gallery site to showcase work and direct potential clients to a clear booking flow—turning browsers into booked sessions.',
+    description: '',
+    goal: 'Showcase work clearly and guide visitors to booking.',
+    whatWeDid: 'Gallery structure, portfolio categories, contact/booking flow.',
     images: [
       '/web_dev/photography-website-1.png',
       '/web_dev/photography-website-2.png',
@@ -141,7 +145,18 @@ export default function DemoTemplatesSection() {
               {/* Project details */}
               <div className="p-8">
                 <h3 className="text-2xl font-light mb-2 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>{project.name}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-sm">{project.description}</p>
+                {project.goal || project.whatWeDid ? (
+                  <div className="mb-6 text-left text-gray-600 text-sm leading-relaxed">
+                    {project.goal && (
+                      <div><span className="font-medium text-purple-700">Goal:</span> {project.goal}</div>
+                    )}
+                    {project.whatWeDid && (
+                      <div><span className="font-medium text-purple-700">What we did:</span> {project.whatWeDid}</div>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm">{project.description}</p>
+                )}
 
                 {/* Features */}
                 <div className="mb-6 flex flex-wrap gap-2">

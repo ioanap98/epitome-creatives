@@ -37,7 +37,7 @@ export default function PositioningSection() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-4 text-black" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-              Websites, Shopify & Photography for Creatives
+              Websites, Shopify & Photography
             </h2>
             <motion.div
               className="w-24 h-px bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mx-auto mb-6"
@@ -47,7 +47,7 @@ export default function PositioningSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             />
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Portfolio websites, Shopify customisation and product photography to showcase your work and grow sales.
+              Portfolio sites, Shopify customisation and product photography — built for product brands and ambitious creators ready to grow.
             </p>
           </div>
 

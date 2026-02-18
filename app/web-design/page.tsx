@@ -1,8 +1,8 @@
 import Header from '@/components/navbar'
 import WebDesignHero from '@/components/web-design-hero'
 import WebDesignServicesSection from '@/components/web-design-services'
-import WhatsIncludedSection from '@/components/web-design-whats-included'
 import DemoTemplatesSection from '@/components/web-design-templates'
+import WebDesignPackagesV2 from '@/components/web-design-packages-v2'
 import ContactSection from '@/components/contact-section'
 import Footer from '@/components/footer'
 
@@ -82,7 +82,7 @@ export default function WebDesignPage() {
       <Header />
       <WebDesignHero />
       <WebDesignServicesSection />
-      <WhatsIncludedSection />
+      <WebDesignPackagesV2 />
       <DemoTemplatesSection />
       <ContactSection />
       <Footer />
