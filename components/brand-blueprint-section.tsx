@@ -46,7 +46,7 @@ export default function BrandBlueprintSection() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
             <a href="https://calendly.com/hello-epitomecreatives/30min" target="_blank" rel="noopener noreferrer" tabIndex={0}>
               <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] hover:bg-right-bottom text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-500" style={{ fontFamily: 'var(--font-geist-sans)' }}>
                 Book Your Free Blueprint Call
