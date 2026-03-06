@@ -103,7 +103,7 @@ export default function WebDesignServicesSection() {
                         </li>
                       ))}
                     </ul>
-                    <div className="text-sm text-purple-700 font-semibold mb-2 mt-3 text-center" style={{letterSpacing: '-0.01em'}}>{prices[index]}</div>
+                    {/* <div className="text-sm text-purple-700 font-semibold mb-2 mt-3 text-center" style={{letterSpacing: '-0.01em'}}>{prices[index]}</div> */}
                   </>
                 )}
               </motion.div>

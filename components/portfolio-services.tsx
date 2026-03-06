@@ -78,7 +78,7 @@ export default function PortfolioServices() {
                 </motion.div>
                 <h3 className="text-2xl font-light mb-3 text-purple-600" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm mb-2">{service.description}</p>
-                <div className="text-sm text-purple-700 font-semibold mb-2 mt-1" style={{letterSpacing: '-0.01em'}}>{prices[index]}</div>
+                {/* <div className="text-sm text-purple-700 font-semibold mb-2 mt-1" style={{letterSpacing: '-0.01em'}}>{prices[index]}</div> */}
               </motion.div>
             )
           })}
